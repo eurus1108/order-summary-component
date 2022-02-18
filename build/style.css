@@ -1,0 +1,239 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --p-blue-300: hsl(225, 100%, 94%);
+  --p-blue-600: hsl(245, 75%, 52%);
+  --n-blue-300: hsl(225, 100%, 98%);
+  --n-blue-400: hsl(224, 23%, 55%);
+  --n-blue-600: hsl(223, 47%, 23%);
+  --font-size-700: 2.8rem;
+  --font-size-600: 2.2rem;
+  --font-size-500: 1.6rem;
+  --font-size-400: 1.5rem;
+  --font-size-300: 1.4rem;
+  --font-size-200: 1.3rem;
+  --radius-300: 1rem;
+  --radius-400: 1.5rem;
+  --radius-600: 2rem;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: var(--font-size-500);
+  color: var(--n-blue-400);
+  background-color: var(--p-blue-300);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.order-component {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  height: 100vh;
+  padding: 0 2.4rem;
+}
+
+.order-component::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  max-height: 58.3rem;
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.summary {
+  max-width: 45rem;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: 0 20px 40px rgba(56, 41, 224, 0.15);
+  border-radius: var(--radius-600);
+  overflow: hidden;
+}
+
+.summary__img-container {
+  margin-bottom: 0.7rem;
+  max-width: 45rem;
+  width: 100%;
+}
+
+.summary__img-container img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.summary__info {
+  padding: 4.5rem 4.8rem;
+}
+
+.summary__text-content {
+  max-width: 29.4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.summary__title {
+  color: var(--n-blue-600);
+}
+
+.summary__text-content .summary__title {
+  padding-bottom: 2px;
+  font-size: var(--font-size-700);
+  font-weight: 900;
+  line-height: 2.6rem;
+}
+
+.summary__text-content .summary__description {
+  padding: 2rem 0;
+  line-height: 2.6rem;
+  letter-spacing: 0.0015em;
+}
+
+.summary__order-query {
+  width: 100%;
+  padding: 2.2rem 2.5rem;
+  margin-bottom: 3.2rem;
+  background-color: var(--n-blue-300);
+  border-radius: var(--radius-400);
+  overflow: hidden;
+}
+
+.summary__order-query,
+.summary__order-query div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary__order-query .icon-music {
+  margin-right: 1.9rem;
+}
+
+.summary__order-query .summary__title {
+  font-size: var(--font-size-500);
+  font-weight: 700;
+  letter-spacing: 0.0125em;
+}
+
+.summary__order-query .summary__button {
+  padding: 1.4rem 0;
+  font-family: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--p-blue-600);
+  background: transparent;
+  border: none;
+}
+
+.summary__order-query .summary__button:hover,
+.summary__order-query .summary__button:active {
+  text-decoration: none;
+  opacity: 0.65;
+}
+
+.summary__link {
+  font-weight: 700;
+  text-align: center;
+}
+
+.summary__link .button--filled {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2.9rem;
+  padding: 1.2rem;
+  color: var(--white);
+  background-color: var(--p-blue-600);
+  box-shadow: 0 20px 40px rgba(56, 41, 224, 0.25);
+  border-radius: var(--radius-300);
+  transition: 300ms ease;
+}
+
+.summary__link .button--filled:hover,
+.summary__link .button--filled:active {
+  opacity: 0.65;
+}
+
+.summary__link .button--none {
+  transition: 300ms ease;
+}
+
+.summary__link .button--none:hover,
+.summary__link .button--none:active {
+  color: var(--n-blue-600);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 1440px) {
+  .order-component::before {
+    max-height: 43.7rem;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .order-component::before {
+    height: 19.4rem;
+    background-image: url("./images/pattern-background-mobile.svg");
+  }
+
+  .summary__info {
+    padding: 3.3rem 2.4rem 2.9rem 2.4rem;
+  }
+
+  .summary__text-content .summary__title {
+    font-size: var(--font-size-600);
+  }
+
+  .summary__text-content .summary__description {
+    font-size: var(--font-size-400);
+    padding: 1.6rem 1.6rem 2.3rem 1.6rem;
+  }
+
+  .summary__order-query {
+    margin-bottom: 2.4rem;
+  }
+
+  .summary__link .button--filled {
+    margin-bottom: 2.1rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .order-component::before {
+    max-height: 19.4rem;
+  }
+}
